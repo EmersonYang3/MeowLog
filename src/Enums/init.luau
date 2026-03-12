@@ -1,4 +1,4 @@
 return {
-	EnvironmentContext = require("@self/EnvironmentContex"),
+	EnvironmentContext = require("@self/EnvironmentContext"),
 	MessageContext = require("@self/MessageContext")
 }
