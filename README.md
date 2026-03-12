@@ -9,7 +9,7 @@ MeowLog's context allow determines whether a logging message will proceed or not
 All messages are currently required to be attached to a message context and the library is strictly typed. 
 
 ## Implementing a new debugging message
-1. To create a new message context, use go to `MeowLog/Enums/MessageContext` and add a new entry to the enum. The key and value can be different, just make sure you remember what you are using. The enum must be added into the `Logs`, `Warns`, `Errors`, or `Any` category.
+1. To create a new message context, use go to `MeowLog/Enums/MessageContext` and add a new entry to the enum. The key and value can be different, just make sure you remember what you are using.
 2. Go to `MeowLog/ContextAllow` and add the new message context to the appropriate allow list. If you want the message to be allowed in both studio and live, add it to both lists, similarly, if you want the message to be allowed on both client and server, add it to both lists as well. Otherwise, add it to the specific list that you want.
 3. When logging a message plainly (with a single message context, and the message), use the `MeowLog:LogPlainMessage()`, `MeowLog:LogPlainWarning()`, or `MeowLog:LogPlainError()` functions. The first parameter is the message context, and the second parameter is the message itself. For example: `MeowLog:LogPlainMessage(MessageContext.Any.MyStuff, "This is a new message!")`
 4. MeowLog will automatically apply context styling to the message using the given identifier.

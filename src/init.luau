@@ -5,6 +5,7 @@ MeowLog.__index = MeowLog
 local RunService = game:GetService("RunService")
 local MeowLogEnums = require("@self/Enums")
 local ContextAllow = require("@self/ContextAllow")
+local Definitions = require("@self/Definitions")
 
 local EnvironmentContext = MeowLogEnums.EnvironmentContext
 
@@ -78,6 +79,17 @@ function MeowLog:LogDebugTraceBack()
 	return self
 end
 
-MeowLog.MessageContext = MeowLogEnums.MessageContext
+function MeowLog:SetEnabledMessageContext(messageContext: string, enabled: boolean)
+	local serverClientContext = self:_GetServerClientContext()
+	local studioLiveContext = self:_GetStudioLiveContext()
 
-return MeowLog
+	local settingKey = if enabled then true else nil
+	
+	ContextAllow[serverClientContext][messageContext] = settingKey
+	ContextAllow[studioLiveContext][messageContext] = settingKey
+end
+
+MeowLog.MessageContext = MeowLogEnums.MessageContext
+MeowLog.EnvironmentContext = MeowLogEnums.EnvironmentContext
+
+return MeowLog :: Definitions.MeowLog
