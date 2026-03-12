@@ -9,4 +9,3 @@ thisMeowLog:LogPlainMessage(MessageContext.HITBOX_SYSTEM_PLAIN, "This message sh
 thisMeowLog:LogPlainWarning(MessageContext.HITBOX_SYSTEM_WARN, "This warning should appear in contexts where the hitbox system is allowed to log warnings.")
 
 thisMeowLog:LogPlainMessage(MessageContext.HITBOX_SYSTEM_PLAIN, "You can chain methods!"):LogDebugTraceBack()
-
