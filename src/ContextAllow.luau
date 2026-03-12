@@ -8,4 +8,4 @@ return {
 	[EnvironmentContext.CLIENT] = { },
 	[EnvironmentContext.STUDIO] = { },
 	[EnvironmentContext.LIVE] = { },
-}
+}:: {[string]: {[string]: boolean}}
