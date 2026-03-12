@@ -41,3 +41,4 @@ thisMeowLog:LogPlainMessage(MessageContext.Any.Demonstration, "Hello!") -> [WEAP
 2. MAKE SURE YOU INCLUDE THE MESSAGE CONTEXT INSIDE BOTH THE CLIENT-SERVER AND STUDIO-LIVE ALLOW LISTS OR ELSE IT WILL NOT LOG. 
 3. THE MESSAGE CONTEXT MUST BE INCLUDED IN AT LEAST ONE OF THE LISTS IN BOTH THE CLIENT-SERVER AND STUDIO-LIVE ALLOW LISTS. Ex. a message context in only the client allow list but not on neither the studio or live allow list will NOT log any messages.
 4. MeowLog is my own personal utility library that I use for debugging. It is early in development and does not currently support features that I have planned for it.
+5. MeowLog methods are chainable. Ex. `thisMeowLog:LogPlainMessage(MessageContext.Any.Demonstration, "A"):LogPlainMessage(MessageContext.Any.Demonstration, "B")` is valid.
