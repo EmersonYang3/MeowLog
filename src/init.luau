@@ -33,8 +33,8 @@ function MeowLog:_GetContextAllowed(messageContext: string): boolean
 	local serverClientContext = self:_GetServerClientContext()
 	local studioLiveContext = self:_GetStudioLiveContext()
 	
-	local isAllowedPerServerClient = ContextAllow[serverClientContext][messageContext]
-	local isAllowedPerStudioLive = ContextAllow[studioLiveContext][messageContext]
+	local isAllowedPerServerClient = ContextAllow[serverClientContext][messageContext] == true
+	local isAllowedPerStudioLive = ContextAllow[studioLiveContext][messageContext] == true
 	
 	return isAllowedPerServerClient and isAllowedPerStudioLive
 end
@@ -92,4 +92,4 @@ end
 MeowLog.MessageContext = MeowLogEnums.MessageContext
 MeowLog.EnvironmentContext = MeowLogEnums.EnvironmentContext
 
-return MeowLog :: Definitions.MeowLog
+return MeowLog
